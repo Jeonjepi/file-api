@@ -9,10 +9,10 @@ const server = app.listen(3000, () =>
 });
 
 //정적 파일 제공
-app.use('/static', express.static(__dirname + '/var/www/html/docdo'));
+app.use('/static', express.static(__dirname + '/resource'));
 
 const multer = require('multer')
-const upload = multer({dest: __dirname + '/var/www/html/docdo'})
+const upload = multer({dest: __dirname + '/resource'})
 
 app.post('/upload', upload.single('file'), (req, res, next) => 
 {
